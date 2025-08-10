@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import { FaClock, FaCar, FaStar, FaTools } from "react-icons/fa";
 
 const GOLD = "#C8AA64";
@@ -116,11 +117,12 @@ export default function Page() {
         <section id="home" className="scroll-mt-24 text-center" style={{ padding: `${SIZE.sectionPadY}px 0` }}>
           <div className="mx-auto max-w-5xl px-6">
             {/* Logo with easy numeric control */}
-            <div className="mx-auto mb-6" style={{
-              width: SIZE.logo, height: SIZE.logo,
-            } as any}>
-              {/* use responsive via CSS clamp on width rather than classes */}
-            </div>
+            
+            <div
+  className="mx-auto mb-6"
+  style={{ width: SIZE.hero.logo, height: SIZE.hero.logo } as CSSProperties}
+/>
+
             <div className="mx-auto mb-6" style={{
               width: `clamp(${SIZE.hero.logo}px, 14vw, ${SIZE.hero.logoDesktop}px)`,
               height: "auto",
