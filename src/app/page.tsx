@@ -118,10 +118,6 @@ export default function Page() {
           <div className="mx-auto max-w-5xl px-6">
             {/* Logo with easy numeric control */}
             
-            <div
-  className="mx-auto mb-6"
-  style={{ width: SIZE.hero.logo, height: SIZE.hero.logo } as CSSProperties}
-/>
 
             <div className="mx-auto mb-6" style={{
               width: `clamp(${SIZE.hero.logo}px, 14vw, ${SIZE.hero.logoDesktop}px)`,
