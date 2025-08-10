@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "PrimeKey Valet",
   description: "Premium Valet Service You Can Trust",
   icons: {
-    icon: "/primekey-logo.png", // favicon
+    icon: "/primekey-logo.ico", // favicon
   },
 };
 
