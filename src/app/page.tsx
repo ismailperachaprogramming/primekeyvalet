@@ -7,7 +7,7 @@ const GOLD = "#C8AA64";
 
 /** Numeric sizes you can tweak */
 const SIZE = {
-  topOffset: 96,                 // px of space under fixed navbar (e.g. h-24)
+  topOffset: 48,                 // px of space under fixed navbar (e.g. h-24)
   hero: {
     logo: 320,                   // logo px on mobile
     logoDesktop: 400,            // logo px on md+
@@ -134,16 +134,6 @@ export default function Page() {
             </div>
 
             {/* Title */}
-            <h1
-              style={{
-                color: GOLD,
-                fontWeight: 800,
-                fontSize: `clamp(${SIZE.hero.titleMin}px, ${SIZE.hero.titleVW}vw, ${SIZE.hero.titleMax}px)`,
-                lineHeight: 1.1,
-              }}
-            >
-              PrimeKey Valet
-            </h1>
 
             {/* Subtitle */}
             <p
@@ -176,7 +166,7 @@ export default function Page() {
 
             {/* Availability */}
             <p style={{ marginTop: 12, color: "#9ca3af", fontSize: SIZE.hero.availFont }}>
-              Available 24/7 in [Area]
+              Available 24/7 in LA and Orange County
             </p>
           </div>
         </section>
@@ -304,9 +294,9 @@ export default function Page() {
           <div style={{ fontWeight: 700, fontSize: 18, marginTop: 10, color: GOLD }}>
             {item.title}
           </div>
-          <div style={{ fontSize: 14, marginTop: 6 }}>
-            {item.desc}
-          </div>
+          <div style={{ fontSize: 14, marginTop: 6, color: "#d4d4d4" }}>
+  {item.desc}
+</div>
         </div>
       ))}
     </div>
@@ -332,7 +322,7 @@ export default function Page() {
         color: GOLD, // match PrimeKey Valet color
       }}
     >
-      Serving the Greater Orange County, CA Area
+      Serving the Los Angeles and Orange County
     </h2>
 
     <div
