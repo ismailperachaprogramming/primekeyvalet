@@ -322,7 +322,7 @@ export default function Page() {
         color: GOLD, // match PrimeKey Valet color
       }}
     >
-      Serving the Los Angeles and Orange County
+      Serving Orange County, CA
     </h2>
 
     <div

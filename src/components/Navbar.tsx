@@ -16,7 +16,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <nav className="bg-black text-yellow-400 p-4 sticky top-0 z-50">
+    <nav className="bg-black text-[#FFD700] p-4 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="text-xl font-bold">PrimeKey Valet</div>
 
@@ -26,7 +26,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="hover:text-yellow-300"
+              className="hover:text-[#FFC300]"
             >
               {link.name}
             </Link>
@@ -36,7 +36,7 @@ export default function Navbar() {
         {/* Mobile Menu Toggle */}
         <div className="md:hidden">
           <button onClick={() => setMobileOpen(!mobileOpen)}>
-            {mobileOpen ? <X size={28} /> : <Menu size={28} />}
+            {mobileOpen ? <X size={28} color="#FFD700" /> : <Menu size={28} color="#FFD700" />}
           </button>
         </div>
       </div>
@@ -48,7 +48,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="hover:text-yellow-300"
+              className="hover:text-[#FFC300]"
               onClick={() => setMobileOpen(false)}
             >
               {link.name}
