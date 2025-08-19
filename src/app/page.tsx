@@ -505,22 +505,30 @@ export default function Page() {
       {/* Honeypot for spam bots */}
       <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
 
-      {/* Submit */}
-      <div className="md:col-span-2" style={{ display: "flex", justifyContent: "center" }}>
-        <button
-          type="submit"
-          style={{
-            backgroundColor: GOLD,
-            color: "#111",
-            fontWeight: 600,
-            fontSize: SIZE.contact.btnFont,
-            padding: `${SIZE.contact.btnPxY}px ${SIZE.contact.btnPxX}px`,
-            borderRadius: SIZE.contact.radius,
-          }}
-        >
-          Submit
-        </button>
-      </div>
+{/* Submit */}
+<div
+  className="md:col-span-2"
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: 40, // 👈 adds space under the button
+  }}
+>
+  <button
+    type="submit"
+    style={{
+      backgroundColor: GOLD,
+      color: "#111",
+      fontWeight: 600,
+      fontSize: SIZE.contact.btnFont,
+      padding: `${SIZE.contact.btnPxY}px ${SIZE.contact.btnPxX}px`,
+      borderRadius: SIZE.contact.radius,
+    }}
+  >
+    Submit
+  </button>
+</div>
+
     </form>
 
     {/* Contact Info Below Form */}
