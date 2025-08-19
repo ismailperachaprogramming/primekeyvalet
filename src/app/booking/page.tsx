@@ -1,161 +1,166 @@
-"use client";
+'use client';
+import Navbar from '@/components/Navbar'; // update this path if needed
+import { useForm, ValidationError } from '@formspree/react';
 
-import Navbar from "@/components/Navbar";
-import { useState } from "react";
+const GOLD = '#C8AA64';
+const SIZE = {
+  contact: {
+    gap: 16,
+    inputH: 48,
+    notesH: 120,
+    btnFont: 18,
+    btnPxY: 10,
+    btnPxX: 28,
+    radius: 12,
+  },
+};
 
-const GOLD = "#C8AA64";
+export default function BookingForm() {
+  const [state, handleSubmit] = useForm('xvgqdabp'); // <-- YOUR FORM ID
 
-export default function BookingPage() {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    date: "",
-    time: "",
-    location: "",
-    notes: "",
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Booking form submitted:", formData);
-    alert("Your booking has been submitted!");
-    // Handle actual backend API logic here
-  };
+  if (state.succeeded) {
+    return (
+      <div className="min-h-screen bg-black text-white px-4 py-10">
+        <Navbar />
+        <p className="text-center mt-10" style={{ color: GOLD }}>
+          ✅ Thanks! We’ll be in touch shortly.
+        </p>
+      </div>
+    );
+  }
 
   return (
-    <main className="bg-[#0b0b0b] min-h-screen text-white">
+    <div className="min-h-screen bg-black text-white px-4 py-10">
       <Navbar />
+      <form
+        onSubmit={handleSubmit}
+        className="mt-10 mx-auto grid grid-cols-1 md:grid-cols-2"
+        style={{ gap: SIZE.contact.gap, maxWidth: 720 }}
+      >
+        <div>
+          <label className="block mb-1" style={{ color: GOLD }}>
+            Full Name*
+          </label>
+          <input
+            type="text"
+            name="name"
+            required
+            style={{
+              height: SIZE.contact.inputH,
+              borderRadius: SIZE.contact.radius,
+              border: `2px solid ${GOLD}`,
+              background: 'transparent',
+              color: '#fff',
+              padding: '0 12px',
+              width: '100%',
+            }}
+          />
+          <ValidationError prefix="Name" field="name" errors={state.errors} />
+        </div>
 
-      <div className="pt-24 px-6 max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold text-center mb-10" style={{ color: GOLD }}>
-          Book Valet Service
-        </h1>
+        <div>
+          <label className="block mb-1" style={{ color: GOLD }}>
+            Phone*
+          </label>
+          <input
+            type="tel"
+            name="phone"
+            required
+            style={{
+              height: SIZE.contact.inputH,
+              borderRadius: SIZE.contact.radius,
+              border: `2px solid ${GOLD}`,
+              background: 'transparent',
+              color: '#fff',
+              padding: '0 12px',
+              width: '100%',
+            }}
+          />
+          <ValidationError prefix="Phone" field="phone" errors={state.errors} />
+        </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="space-y-6 bg-[#111] p-6 rounded-xl shadow-md border border-gray-800"
+        <div>
+          <label className="block mb-1" style={{ color: GOLD }}>
+            Email*
+          </label>
+          <input
+            type="email"
+            name="email"
+            required
+            style={{
+              height: SIZE.contact.inputH,
+              borderRadius: SIZE.contact.radius,
+              border: `2px solid ${GOLD}`,
+              background: 'transparent',
+              color: '#fff',
+              padding: '0 12px',
+              width: '100%',
+            }}
+          />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
+        </div>
+
+        <div>
+          <label className="block mb-1" style={{ color: GOLD }}>
+            Event Date
+          </label>
+          <input
+            type="date"
+            name="date"
+            style={{
+              height: SIZE.contact.inputH,
+              borderRadius: SIZE.contact.radius,
+              border: `2px solid ${GOLD}`,
+              background: 'transparent',
+              color: '#fff',
+              padding: '0 12px',
+              width: '100%',
+            }}
+          />
+          <ValidationError prefix="Date" field="date" errors={state.errors} />
+        </div>
+
+        <div className="md:col-span-2">
+          <label className="block mb-1" style={{ color: GOLD }}>
+            Event Details
+          </label>
+          <textarea
+            name="details"
+            style={{
+              height: SIZE.contact.notesH,
+              borderRadius: SIZE.contact.radius,
+              border: `2px solid ${GOLD}`,
+              background: 'transparent',
+              color: '#fff',
+              padding: '8px 12px',
+              width: '100%',
+            }}
+          />
+          <ValidationError prefix="Details" field="details" errors={state.errors} />
+        </div>
+
+        <div
+          className="md:col-span-2"
+          style={{ display: 'flex', justifyContent: 'center' }}
         >
-          <div>
-            <label className="block mb-1 font-medium" htmlFor="fullName">
-              Full Name
-            </label>
-            <input
-              className="w-full p-3 bg-[#1a1a1a] border border-gray-700 rounded-md"
-              type="text"
-              id="fullName"
-              name="fullName"
-              required
-              value={formData.fullName}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div>
-            <label className="block mb-1 font-medium" htmlFor="email">
-              Email
-            </label>
-            <input
-              className="w-full p-3 bg-[#1a1a1a] border border-gray-700 rounded-md"
-              type="email"
-              id="email"
-              name="email"
-              required
-              value={formData.email}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div>
-            <label className="block mb-1 font-medium" htmlFor="phone">
-              Phone Number
-            </label>
-            <input
-              className="w-full p-3 bg-[#1a1a1a] border border-gray-700 rounded-md"
-              type="tel"
-              id="phone"
-              name="phone"
-              required
-              value={formData.phone}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className="flex gap-4">
-            <div className="flex-1">
-              <label className="block mb-1 font-medium" htmlFor="date">
-                Date
-              </label>
-              <input
-                className="w-full p-3 bg-[#1a1a1a] border border-gray-700 rounded-md"
-                type="date"
-                id="date"
-                name="date"
-                required
-                value={formData.date}
-                onChange={handleChange}
-              />
-            </div>
-
-            <div className="flex-1">
-              <label className="block mb-1 font-medium" htmlFor="time">
-                Time
-              </label>
-              <input
-                className="w-full p-3 bg-[#1a1a1a] border border-gray-700 rounded-md"
-                type="time"
-                id="time"
-                name="time"
-                required
-                value={formData.time}
-                onChange={handleChange}
-              />
-            </div>
-          </div>
-
-          <div>
-            <label className="block mb-1 font-medium" htmlFor="location">
-              Location
-            </label>
-            <input
-              className="w-full p-3 bg-[#1a1a1a] border border-gray-700 rounded-md"
-              type="text"
-              id="location"
-              name="location"
-              required
-              value={formData.location}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div>
-            <label className="block mb-1 font-medium" htmlFor="notes">
-              Additional Notes (Optional)
-            </label>
-            <textarea
-              className="w-full p-3 bg-[#1a1a1a] border border-gray-700 rounded-md"
-              rows={5}
-              id="notes"
-              name="notes"
-              value={formData.notes}
-              onChange={handleChange}
-            ></textarea>
-          </div>
-
-          <div className="pt-4">
-            <button
-              type="submit"
-              className="w-full bg-[#C8AA64] hover:bg-yellow-500 text-black font-semibold py-3 px-6 rounded-md transition"
-            >
-              Submit Booking
-            </button>
-          </div>
-        </form>
-      </div>
-    </main>
+          <button
+            type="submit"
+            disabled={state.submitting}
+            style={{
+              backgroundColor: GOLD,
+              color: '#111',
+              fontWeight: 600,
+              fontSize: SIZE.contact.btnFont,
+              padding: `${SIZE.contact.btnPxY}px ${SIZE.contact.btnPxX}px`,
+              borderRadius: SIZE.contact.radius,
+              opacity: state.submitting ? 0.7 : 1,
+              cursor: state.submitting ? 'not-allowed' : 'pointer',
+            }}
+          >
+            {state.submitting ? 'Sending…' : 'Submit'}
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
