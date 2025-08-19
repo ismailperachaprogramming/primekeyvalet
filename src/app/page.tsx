@@ -325,7 +325,7 @@ export default function Page() {
     marginBottom: 24, // 👈 add this line
   }}
 >
-  Serving Orange County, CA
+  Serving Los Angeles County Metropolitan Area
 </h2>
 
     <div
@@ -339,16 +339,16 @@ export default function Page() {
         overflow: "hidden",
       }}
     >
-      <iframe
-        title="Orange County Service Area"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53050.00991818023!2d-117.87035325589126!3d33.71747026121826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcdbacbd680c4b%3A0x9a22e23647b3e97b!2sOrange%20County%2C%20CA!5e0!3m2!1sen!2sus!4v1691619867824!5m2!1sen!2sus"
-        width="100%"
-        height="100%"
-        style={{ border: 0 }}
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      ></iframe>
+<iframe
+  title="Los Angeles Metro Area"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2742012387!2d-118.69193049999999!3d34.0207305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bb13b5c1b91b%3A0xf7ef24c6c1e50c8e!2sLos%20Angeles%2C%20CA!5e0!3m2!1sen!2sus!4v1691619867824!5m2!1sen!2sus"
+  width="100%"
+  height="100%"
+  style={{ border: 0 }}
+  allowFullScreen
+  loading="lazy"
+  referrerPolicy="no-referrer-when-downgrade"
+/>
     </div>
   </div>
 </section>
