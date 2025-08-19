@@ -178,15 +178,17 @@ export default function Page() {
   style={{ padding: `${SIZE.sectionPadY}px 0`, borderTop: "1px solid rgba(200,170,100,0.25)" }}
 >
   <div className="mx-auto max-w-6xl px-6">
-    <h2
-      className="text-center font-semibold"
-      style={{
-        fontSize: `clamp(${SIZE.h2Min}px, ${SIZE.h2VW}vw, ${SIZE.h2Max}px)`,
-        color: GOLD, // ✅ Gold heading
-      }}
-    >
-      Our Services
-    </h2>
+  <h2
+  className="text-center font-semibold"
+  style={{
+    fontSize: `clamp(${SIZE.h2Min}px, ${SIZE.h2VW}vw, ${SIZE.h2Max}px)`,
+    color: GOLD,
+    marginBottom: 24, // 👈 add this line
+  }}
+>
+  Our Services
+</h2>
+
 
     <div className="mt-10 grid grid-cols-1" style={{ gap: SIZE.services.gap }}>
       {items.map((s, i) => (
@@ -261,16 +263,16 @@ export default function Page() {
   }}
 >
   <div className="mx-auto max-w-6xl px-6">
-    <h2
-      className="text-center font-semibold"
-      style={{
-        fontSize: `clamp(${SIZE.h2Min}px, ${SIZE.h2VW}vw, ${SIZE.h2Max}px)`,
-        color: GOLD
-      }}
-    >
-      Why Choose Us
-    </h2>
-
+  <h2
+  className="text-center font-semibold"
+  style={{
+    fontSize: `clamp(${SIZE.h2Min}px, ${SIZE.h2VW}vw, ${SIZE.h2Max}px)`,
+    color: GOLD,
+    marginBottom: 24, // 👈 add this line
+  }}
+>
+  Why Choose Us
+</h2>
     <div
       className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
     >
@@ -315,15 +317,16 @@ export default function Page() {
   }}
 >
   <div className="mx-auto max-w-6xl px-6">
-    <h2
-      className="text-center font-semibold"
-      style={{
-        fontSize: `clamp(${SIZE.h2Min}px, ${SIZE.h2VW}vw, ${SIZE.h2Max}px)`,
-        color: GOLD, // match PrimeKey Valet color
-      }}
-    >
-      Serving Orange County, CA
-    </h2>
+  <h2
+  className="text-center font-semibold"
+  style={{
+    fontSize: `clamp(${SIZE.h2Min}px, ${SIZE.h2VW}vw, ${SIZE.h2Max}px)`,
+    color: GOLD,
+    marginBottom: 24, // 👈 add this line
+  }}
+>
+  Serving Orange County, CA
+</h2>
 
     <div
       className="mt-10 mx-auto"
