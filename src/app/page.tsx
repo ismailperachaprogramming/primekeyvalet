@@ -167,7 +167,7 @@ export default function Page() {
 
             {/* Availability */}
             <p style={{ marginTop: 12, color: "#9ca3af", fontSize: SIZE.hero.availFont }}>
-              Available 24/7 in LA and Orange County
+              Available 24/7 in LA County and Orange County
             </p>
           </div>
         </section>
@@ -326,7 +326,7 @@ export default function Page() {
     marginBottom: 24, // 👈 add this line
   }}
 >
-  Serving Los Angeles County Metropolitan Area
+  Serving LA County and Orange County
 </h2>
 
     <div
@@ -341,15 +341,16 @@ export default function Page() {
       }}
     >
 <iframe
-  title="Los Angeles Metro Area"
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423286.2742012387!2d-118.69193049999999!3d34.0207305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bb13b5c1b91b%3A0xf7ef24c6c1e50c8e!2sLos%20Angeles%2C%20CA!5e0!3m2!1sen!2sus!4v1691619867824!5m2!1sen!2sus"
+  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5281944.835159697!2d-118.2185!3d34.0522!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c0b90f5f89b3%3A0xe0635eb22df22d56!2sLos%20Angeles%20County%2C%20CA!5e0!3m2!1sen!2sus!4v1668657022064!5m2!1sen!2sus"
   width="100%"
-  height="100%"
-  style={{ border: 0 }}
-  allowFullScreen
+  height="450"
+  style={{ border: 0, borderRadius: "20px" }}
+  allowFullScreen={false}
   loading="lazy"
   referrerPolicy="no-referrer-when-downgrade"
 />
+
+
     </div>
   </div>
 </section>
