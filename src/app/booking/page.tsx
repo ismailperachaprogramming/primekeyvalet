@@ -1,5 +1,5 @@
 'use client';
-import Navbar from '@/components/Navbar'; // update this path if needed
+import Navbar from '@/components/Navbar';
 import { useForm, ValidationError } from '@formspree/react';
 
 const GOLD = '#C8AA64';
@@ -16,7 +16,7 @@ const SIZE = {
 };
 
 export default function BookingForm() {
-  const [state, handleSubmit] = useForm('xvgqdabp'); // <-- YOUR FORM ID
+  const [state, handleSubmit] = useForm('xvgqdabp');
 
   if (state.succeeded) {
     return (
@@ -37,6 +37,7 @@ export default function BookingForm() {
         className="mt-10 mx-auto grid grid-cols-1 md:grid-cols-2"
         style={{ gap: SIZE.contact.gap, maxWidth: 720 }}
       >
+        {/* Full Name */}
         <div>
           <label className="block mb-1" style={{ color: GOLD }}>
             Full Name*
@@ -58,6 +59,7 @@ export default function BookingForm() {
           <ValidationError prefix="Name" field="name" errors={state.errors} />
         </div>
 
+        {/* Phone */}
         <div>
           <label className="block mb-1" style={{ color: GOLD }}>
             Phone*
@@ -79,6 +81,7 @@ export default function BookingForm() {
           <ValidationError prefix="Phone" field="phone" errors={state.errors} />
         </div>
 
+        {/* Email */}
         <div>
           <label className="block mb-1" style={{ color: GOLD }}>
             Email*
@@ -100,6 +103,7 @@ export default function BookingForm() {
           <ValidationError prefix="Email" field="email" errors={state.errors} />
         </div>
 
+        {/* Event Date */}
         <div>
           <label className="block mb-1" style={{ color: GOLD }}>
             Event Date
@@ -120,6 +124,87 @@ export default function BookingForm() {
           <ValidationError prefix="Date" field="date" errors={state.errors} />
         </div>
 
+        {/* Start Date */}
+        <div>
+          <label className="block mb-1" style={{ color: GOLD }}>
+            Start Date
+          </label>
+          <input
+            type="date"
+            name="startDate"
+            style={{
+              height: SIZE.contact.inputH,
+              borderRadius: SIZE.contact.radius,
+              border: `2px solid ${GOLD}`,
+              background: 'transparent',
+              color: '#fff',
+              padding: '0 12px',
+              width: '100%',
+            }}
+          />
+        </div>
+
+        {/* End Date */}
+        <div>
+          <label className="block mb-1" style={{ color: GOLD }}>
+            End Date
+          </label>
+          <input
+            type="date"
+            name="endDate"
+            style={{
+              height: SIZE.contact.inputH,
+              borderRadius: SIZE.contact.radius,
+              border: `2px solid ${GOLD}`,
+              background: 'transparent',
+              color: '#fff',
+              padding: '0 12px',
+              width: '100%',
+            }}
+          />
+        </div>
+
+        {/* Start Time */}
+        <div>
+          <label className="block mb-1" style={{ color: GOLD }}>
+            Start Time
+          </label>
+          <input
+            type="time"
+            name="startTime"
+            style={{
+              height: SIZE.contact.inputH,
+              borderRadius: SIZE.contact.radius,
+              border: `2px solid ${GOLD}`,
+              background: 'transparent',
+              color: '#fff',
+              padding: '0 12px',
+              width: '100%',
+            }}
+          />
+        </div>
+
+        {/* End Time */}
+        <div>
+          <label className="block mb-1" style={{ color: GOLD }}>
+            End Time
+          </label>
+          <input
+            type="time"
+            name="endTime"
+            style={{
+              height: SIZE.contact.inputH,
+              borderRadius: SIZE.contact.radius,
+              border: `2px solid ${GOLD}`,
+              background: 'transparent',
+              color: '#fff',
+              padding: '0 12px',
+              width: '100%',
+            }}
+          />
+        </div>
+
+        {/* Event Details */}
         <div className="md:col-span-2">
           <label className="block mb-1" style={{ color: GOLD }}>
             Event Details
@@ -139,6 +224,7 @@ export default function BookingForm() {
           <ValidationError prefix="Details" field="details" errors={state.errors} />
         </div>
 
+        {/* Submit Button */}
         <div
           className="md:col-span-2"
           style={{ display: 'flex', justifyContent: 'center' }}

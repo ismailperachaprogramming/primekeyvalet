@@ -378,7 +378,7 @@ export default function Page() {
     </p>
 
     {/* Book Now Button with margin-top */}
-    <div style={{ marginTop: "2rem" }}>
+    <div style={{ marginTop: "2rem", marginBottom: "2rem" }}>
       <a
         href="/booking"
         style={{
