@@ -354,8 +354,6 @@ export default function Page() {
   </div>
 </section>
 
-
-{/* CONTACT REMOVED — replaced with CTA to Booking Page */}
 <section
   className="scroll-mt-24"
   style={{
@@ -377,20 +375,24 @@ export default function Page() {
     <p className="text-white text-lg mb-6">
       Head over to our secure booking form and we’ll get started right away.
     </p>
-    <a
-      href="/booking"
-      style={{
-        backgroundColor: GOLD,
-        color: "#111",
-        fontWeight: 600,
-        fontSize: SIZE.hero.btnFont,
-        padding: `${SIZE.hero.btnPxY}px ${SIZE.hero.btnPxX}px`,
-        borderRadius: 10,
-        display: "inline-block",
-      }}
-    >
-      Book Now
-    </a>
+
+    {/* Book Now Button with margin-top */}
+    <div style={{ marginTop: "2rem" }}>
+      <a
+        href="/booking"
+        style={{
+          backgroundColor: GOLD,
+          color: "#111",
+          fontWeight: 600,
+          fontSize: SIZE.hero.btnFont,
+          padding: `${SIZE.hero.btnPxY}px ${SIZE.hero.btnPxX}px`,
+          borderRadius: 10,
+          display: "inline-block",
+        }}
+      >
+        Book Now
+      </a>
+    </div>
 
     {/* Optional Contact Info */}
     <div className="mt-10 space-y-2 text-white text-sm">
@@ -414,6 +416,7 @@ export default function Page() {
     </div>
   </div>
 </section>
+
         {/* FOOTER */}
         <footer style={{ borderTop: "1px solid rgba(200,170,100,0.25)" }}>
           <div className="mx-auto max-w-6xl px-6 py-8 text-center text-xs text-neutral-400">
