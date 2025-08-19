@@ -5,12 +5,14 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/about" },
   { name: "Our Services", href: "#services" },
   { name: "Why Choose Us", href: "#why" },
   { name: "Service Area", href: "#area" },
   { name: "Contact Us", href: "#contact" },
 ];
+
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
